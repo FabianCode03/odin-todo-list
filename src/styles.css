@@ -16,6 +16,54 @@
 }
 
 body {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: 10% 85% 5%;
+  grid-template-areas:
+    "header header"
+    "aside main"
+    "footer footer";
+
   background-color: var(--background-color);
   color: var(--dark-color);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-color);
+}
+
+.header {
+  grid-area: header;
+  padding: 20px;
+  background-color: var(--primary-color);
+}
+
+.menu-points {
+  display: flex;
+  gap: 20px;
+}
+
+main {
+  grid-area: main;
+  width: 80%;
+}
+
+.aside {
+  grid-area: aside;
+  padding: 20px;
+  background-color: var(--secondary-color-1);
+}
+
+footer {
+  grid-area: footer;
+  padding: 20px;
+  background-color: var(--primary-color);
+  text-align: center;
+  color: var(--light-color);
 }

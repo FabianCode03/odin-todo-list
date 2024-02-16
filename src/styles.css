@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --primary-color: #91c48a;
+  --secondary-color-1: #ffa9a3;
+  --secondary-color-2: #6d9dc5;
+  --secondary-color-3: #485751;
+  --background-color: #f4f4f4;
+  --dark-color: #333;
+  --light-color: #fff;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--dark-color);
+}

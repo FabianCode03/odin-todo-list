@@ -1,0 +1,16 @@
+{
+  "name": "odin-todo-list",
+  "version": "1.0.0",
+  "description": "This is an assignment given by \"The Odin Project\". The goal is to make a simple to-do Website with a focus on Code organization with the use of Classes with the \"Single responsible principle\" in mind. Im also trying to get into a webpack based workflow.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.90.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.2"
+  }
+}

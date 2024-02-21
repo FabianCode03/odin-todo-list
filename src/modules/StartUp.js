@@ -1,4 +1,4 @@
-export function addAllEventlisteners() {
+export function addAllEventListeners() {
   window.addEventListener("load", function () {
     // Storing references to the DOM elements
     const addTodoBtn = document.querySelector(".new-Todo-btn");

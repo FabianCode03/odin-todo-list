@@ -81,6 +81,10 @@ main {
   text-align: center;
 }
 
+.menu-point:hover {
+  box-shadow: 0 0 5px 0 var(--dark-color);
+  cursor: pointer;
+}
 .footer {
   grid-area: footer;
   padding: 20px;

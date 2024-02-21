@@ -6,9 +6,12 @@ export function addAllEventListeners() {
     const todayView = document.querySelector(".today-view");
     const thisWeekView = document.querySelector(".this-week-view");
     const projectsView = document.querySelector(".projects-view");
+    const modal = document.querySelector(".modal");
+    const closeModalBtn = document.querySelector(".close-modal-btn");
 
     // Adding event listeners to the DOM elements
-    addTodoBtn.addEventListener("click", () => console.log("opening Dialog"));
+    addTodoBtn.addEventListener("click", () => modal.showModal());
+    closeModalBtn.addEventListener("click", () => modal.close());
     allTodosView.addEventListener("click", () =>
       console.log("showing all todos")
     );

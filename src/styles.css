@@ -67,6 +67,20 @@ main {
   background-color: var(--secondary-color-1);
 }
 
+.menu-points {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-point {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--secondary-color-2);
+  color: var(--light-color);
+  text-align: center;
+}
+
 .footer {
   grid-area: footer;
   padding: 20px;

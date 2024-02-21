@@ -27,10 +27,22 @@
         <a href="https://github.com/FabianCode03/odin-todo-list">Github</a>
       </p>
     </footer>
+
     <!-- Modal for new ToDo's -->
     <dialog data-modal class="modal">
-      <h2>Add new Todo</h2>
+      <header class="modal-header">
+        <h2>Add new Todo</h2>
+      </header>
       <form class="new-todo-form">
+        <div class="form-row">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" />
+        </div>
+        <div class="form-row">
+          <textarea name="description" id="description" cols="30" rows="10">
+            Das ist ein erster Test!
+          </textarea>
+        </div>
         <button class="close-modal-btn">Close</button>
       </form>
     </dialog>

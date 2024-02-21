@@ -18,7 +18,7 @@
 body {
   height: 100vh;
   display: grid;
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 15% 85%;
   grid-template-rows: 10% 85% 5%;
   grid-template-areas:
     "header header"
@@ -42,6 +42,13 @@ a {
   grid-area: header;
   padding: 20px;
   background-color: var(--primary-color);
+  color: var(--dark-color);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: x-large;
 }
 
 .menu-points {
@@ -60,7 +67,7 @@ main {
   background-color: var(--secondary-color-1);
 }
 
-footer {
+.footer {
   grid-area: footer;
   padding: 20px;
   background-color: var(--primary-color);

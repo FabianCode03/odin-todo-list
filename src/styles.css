@@ -167,6 +167,24 @@ main {
   width: 100%;
 }
 
+.form-due-date {
+  font-size: large;
+  border: 2px solid var(--dark-color);
+}
+
+.form-priority {
+  font-size: large;
+  border: 2px solid var(--dark-color);
+}
+
+.equal-cols {
+  display: flex;
+}
+
+.equal-cols > * {
+  flex: 1;
+}
+
 .footer {
   grid-area: footer;
   padding: 20px;

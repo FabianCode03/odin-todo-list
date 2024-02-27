@@ -44,11 +44,33 @@
         <textarea
           name="description"
           id="description"
-          cols="30"
-          rows="10"
+          rows="5"
           placeholder="Additional description (optional)"
           class="input-style form-description"
         ></textarea>
+        <div class="equal-cols">
+          <div class="input-wrapper">
+            <label for="due-date">Due Date:</label>
+            <input
+              type="date"
+              name="due-date"
+              id="due-date"
+              class="input-style form-due-date"
+            />
+          </div>
+          <div class="input-wrapper">
+            <label for="priority">Priority:</label>
+            <select
+              name="priority"
+              id="priority"
+              class="input-style form-priority"
+            >
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+        </div>
         <button class="close-modal-btn">Close</button>
       </form>
     </dialog>

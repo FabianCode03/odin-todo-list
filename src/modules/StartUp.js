@@ -7,7 +7,8 @@ export function addAllEventListeners() {
     const thisWeekView = document.querySelector(".this-week-view");
     const projectsView = document.querySelector(".projects-view");
     const modal = document.querySelector(".modal");
-    const closeModalBtn = document.querySelector(".close-modal-btn");
+    const closeModalBtn = document.querySelector(".cancel-btn");
+    const submitBtn = document.querySelector(".submit-btn");
 
     // Adding event listeners to the DOM elements
     addTodoBtn.addEventListener("click", () => modal.showModal());

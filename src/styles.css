@@ -177,6 +177,20 @@ main {
   border: 2px solid var(--dark-color);
 }
 
+.button-row {
+  gap: 20px;
+}
+
+.button-row-btn {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--secondary-color-2);
+  color: var(--light-color);
+  text-align: center;
+  font-size: large;
+}
+
 .equal-cols {
   display: flex;
 }

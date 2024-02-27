@@ -13,6 +13,12 @@
   --background-color: #f4f4f4;
   --dark-color: #333;
   --light-color: #fff;
+
+  --priority-high: #ff0000;
+  --priority-medium: #ff8c00;
+  --priority-low: #32cd32;
+
+  --todo-background-color: #9f9f9f41;
 }
 
 body {
@@ -58,7 +64,6 @@ a {
 
 main {
   grid-area: main;
-  width: 80%;
 }
 
 .aside {
@@ -197,6 +202,42 @@ main {
 
 .equal-cols > * {
   flex: 1;
+}
+
+#TodoContainer {
+  width: 100%;
+  padding: 20px;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: var(--todo-background-color);
+  color: var(--dark-color);
+}
+
+.leftElements,
+.rightElements {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.priority-high {
+  border-left: 5px solid var(--priority-high);
+}
+
+.priority-medium {
+  border-left: 5px solid var(--priority-medium);
+}
+
+.priority-low {
+  border-left: 5px solid var(--priority-low);
 }
 
 .footer {

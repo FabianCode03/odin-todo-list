@@ -83,8 +83,11 @@ main {
   padding: 10px;
   border-radius: 5px;
   background-color: var(--secondary-color-2);
-  color: var(--light-color);
   text-align: center;
+}
+
+.menu-point a {
+  color: var(--light-color);
 }
 
 .menu-point:hover {
@@ -240,10 +243,25 @@ main {
   border-left: 5px solid var(--priority-low);
 }
 
+.showDetails {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--secondary-color-2);
+  color: var(--light-color);
+  text-align: center;
+  font-size: medium;
+}
+
+.showDetails:hover {
+  box-shadow: 0 0 5px 0 var(--dark-color);
+  cursor: pointer;
+}
+
 .footer {
   grid-area: footer;
   padding: 20px;
   background-color: var(--primary-color);
   text-align: center;
-  color: var(--light-color);
+  color: var(--dark-color);
 }

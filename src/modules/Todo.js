@@ -5,6 +5,7 @@ export class Todo {
   #priority;
   #isDone = false;
   static #todoCount = 0;
+  static #todoList = [];
 
   constructor(title, description, dueDate, priority) {
     this.#title = title;
@@ -73,5 +74,13 @@ export class Todo {
 
   static decrementTodoCount() {
     Todo.#todoCount--;
+  }
+
+  static get todoList() {
+    return Todo.#todoList;
+  }
+
+  static addTodoToList(todo) {
+    Todo.#todoList.push(todo);
   }
 }

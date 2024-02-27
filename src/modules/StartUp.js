@@ -1,3 +1,5 @@
+import { Todo } from "./Todo";
+
 export function addAllEventListeners() {
   window.addEventListener("load", function () {
     // Storing references to the DOM elements
@@ -9,6 +11,7 @@ export function addAllEventListeners() {
     const modal = document.querySelector(".modal");
     const closeModalBtn = document.querySelector(".cancel-btn");
     const submitBtn = document.querySelector(".submit-btn");
+    const newTodoForm = document.querySelector(".new-todo-form");
 
     // Adding event listeners to the DOM elements
     addTodoBtn.addEventListener("click", () => modal.showModal());
@@ -25,5 +28,20 @@ export function addAllEventListeners() {
     projectsView.addEventListener("click", () =>
       console.log("showing projects")
     );
+    submitBtn.addEventListener("click", e => {
+      e.preventDefault();
+      console.log("submitting form");
+      const newTodo = new Todo(
+        newTodoForm.title.value,
+        newTodoForm.description.value,
+        newTodoForm.dueDate.value,
+        newTodoForm.priority.value
+      );
+
+      Todo.addTodoToList(newTodo);
+      modal.close();
+      console.log(newTodo);
+      console.log(Todo.todoList);
+    });
   });
 }

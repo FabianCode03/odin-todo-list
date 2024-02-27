@@ -34,15 +34,21 @@
         <h2>Add new Todo</h2>
       </header>
       <form class="new-todo-form">
-        <div class="form-row">
-          <label for="title">Title</label>
-          <input type="text" name="title" id="title" />
-        </div>
-        <div class="form-row">
-          <textarea name="description" id="description" cols="30" rows="10">
-            Das ist ein erster Test!
-          </textarea>
-        </div>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Title"
+          class="input-style form-title"
+        />
+        <textarea
+          name="description"
+          id="description"
+          cols="30"
+          rows="10"
+          placeholder="Additional description (optional)"
+          class="input-style form-description"
+        ></textarea>
         <button class="close-modal-btn">Close</button>
       </form>
     </dialog>

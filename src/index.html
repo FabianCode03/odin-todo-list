@@ -35,7 +35,7 @@
     </footer>
 
     <!-- Modal for new ToDo's -->
-    <dialog data-modal class="modal">
+    <dialog data-modal class="new-todo-modal">
       <header class="modal-header">
         <h2>Add new Todo</h2>
       </header>
@@ -80,6 +80,58 @@
         <div class="button-row equal-cols">
           <button class="cancel-btn button-row-btn">Cancel</button>
           <button class="submit-btn button-row-btn" type="submit">Add</button>
+        </div>
+      </form>
+    </dialog>
+
+    <!-- Modal for editing ToDo's -->
+    <dialog data-modal class="edit-todo-modal">
+      <header class="modal-header">
+        <h2>Edit Todo</h2>
+      </header>
+      <form class="edit-todo-form">
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Title"
+          class="input-style form-title"
+        />
+        <textarea
+          name="description"
+          id="description"
+          rows="5"
+          placeholder="Additional description (optional)"
+          class="input-style form-description"
+        ></textarea>
+        <div class="equal-cols">
+          <div class="input-wrapper">
+            <label for="due-date">Due Date:</label>
+            <input
+              type="date"
+              name="dueDate"
+              id="dueDate"
+              class="input-style form-due-date"
+            />
+          </div>
+          <div class="input-wrapper">
+            <label for="priority">Priority:</label>
+            <select
+              name="priority"
+              id="priority"
+              class="input-style form-priority"
+            >
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+        </div>
+        <div class="button-row equal-cols">
+          <button class="cancel-btn button-row-btn">Cancel</button>
+          <button class="confirm-changes-btn button-row-btn" type="submit">
+            Confirm changes
+          </button>
         </div>
       </form>
     </dialog>

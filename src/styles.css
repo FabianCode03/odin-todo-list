@@ -116,7 +116,8 @@ main {
   cursor: pointer;
 }
 
-.modal {
+.new-todo-modal,
+.edit-todo-modal {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -131,7 +132,8 @@ main {
   gap: 20px;
 }
 
-.modal::backdrop {
+.new-todo-modal::backdrop,
+.edit-todo-modal::backdrop {
   backdrop-filter: blur(10px);
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -143,7 +145,8 @@ main {
   border-radius: 10px 10px 0 0;
 }
 
-.new-todo-form {
+.new-todo-form,
+.edit-todo-form {
   display: flex;
   flex-direction: column;
   gap: 20px;

@@ -27,11 +27,7 @@ export class Todo {
   }
 
   set title(title) {
-    if (typeof title === "string" && title.length > 0) {
-      this.#title = title;
-    } else {
-      console.error("title must be a non-empty string!");
-    }
+    this.#title = title;
   }
 
   get description() {
@@ -47,12 +43,7 @@ export class Todo {
   }
 
   set dueDate(dueDate) {
-    let currentDate = new Date();
-    if (currentDate >= dueDate) {
-      this.#dueDate = dueDate;
-    } else {
-      console.error("due Date can't be in the past!");
-    }
+    this.#dueDate = dueDate;
   }
 
   get priority() {
@@ -60,11 +51,7 @@ export class Todo {
   }
 
   set priority(priority) {
-    if (typeof priority === "number" && priority > 0 && priority < 4) {
-      this.#priority = priority;
-    } else {
-      console.error("priority must be 1, 2 or 3 and typeof number!");
-    }
+    this.#priority = priority;
   }
 
   get isDone() {

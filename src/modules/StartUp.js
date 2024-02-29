@@ -9,15 +9,18 @@ export function addAllEventListeners() {
     const todayView = document.querySelector(".today-view");
     const thisWeekView = document.querySelector(".this-week-view");
     const projectsView = document.querySelector(".projects-view");
-    const modal = document.querySelector(".modal");
+    const newTodoModal = document.querySelector(".new-todo-modal");
+    const editTodoModal = document.querySelector(".edit-todo-modal");
     const closeModalBtn = document.querySelector(".cancel-btn");
     const submitBtn = document.querySelector(".submit-btn");
+    const confirmChangesBtn = document.querySelector(".confirm-changes-btn");
     const newTodoForm = document.querySelector(".new-todo-form");
-    const todoContainer = this.document.querySelector("#TodoContainer");
+    const editTodoForm = document.querySelector(".edit-todo-form");
+    const todoContainer = document.querySelector("#TodoContainer");
 
     // Adding event listeners to the DOM elements
-    addTodoBtn.addEventListener("click", () => modal.showModal());
-    closeModalBtn.addEventListener("click", () => modal.close());
+    addTodoBtn.addEventListener("click", () => newTodoModal.showModal());
+    closeModalBtn.addEventListener("click", () => newTodoModal.close());
     allTodosView.addEventListener("click", () =>
       console.log("showing all todos")
     );
@@ -47,7 +50,7 @@ export function addAllEventListeners() {
 
       // Resetting form and closing modal
       newTodoForm.reset();
-      modal.close();
+      newTodoModal.close();
 
       // Rendering the updated todo-list
       renderTodoList(Todo.todoList, todoContainer);
@@ -67,6 +70,37 @@ export function addAllEventListeners() {
         Todo.removeTodoFromList(todo);
         renderTodoList(Todo.todoList, todoContainer);
       }
+
+      if (event.target.closest(".editTodo") !== null) {
+        editTodoForm.title.value = todo.title;
+        editTodoForm.description.value = todo.description;
+        editTodoForm.dueDate.value = todo.dueDate;
+        editTodoForm.priority.value = todo.priority;
+        todo.editing = true; // setting editing flag
+        editTodoModal.showModal();
+      }
+    });
+
+    confirmChangesBtn.addEventListener("click", e => {
+      e.preventDefault();
+      console.log("editing form");
+
+      const todo = Todo.todoList.find(todo => todo.editing == true);
+      console.log(todo);
+
+      if (todo) {
+        todo.title = editTodoForm.title.value;
+        todo.description = editTodoForm.description.value;
+        todo.dueDate = editTodoForm.dueDate.value;
+        todo.priority = editTodoForm.priority.value;
+
+        delete todo.editing;
+
+        renderTodoList(Todo.todoList, todoContainer);
+      }
+
+      editTodoForm.reset();
+      editTodoModal.close();
     });
   });
 }

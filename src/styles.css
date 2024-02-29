@@ -216,7 +216,7 @@ main {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 15px;
+  padding: 10px;
   margin: 10px 0;
   border-radius: 5px;
   background-color: var(--todo-background-color);
@@ -244,7 +244,7 @@ main {
 }
 
 .showDetails {
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
   border: none;
   background-color: var(--secondary-color-2);
@@ -264,4 +264,30 @@ main {
   background-color: var(--primary-color);
   text-align: center;
   color: var(--dark-color);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+  color: var(--light-color);
+}
+
+.editTodo,
+.deleteTodo {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  border: none;
+  background-color: var(--secondary-color-2);
+  text-align: center;
+  font-size: medium;
+}
+
+.editTodo:hover,
+.deleteTodo:hover {
+  box-shadow: 0 0 5px 0 var(--dark-color);
+  cursor: pointer;
 }

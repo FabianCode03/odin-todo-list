@@ -1,18 +1,25 @@
 export class Todo {
+  #id;
   #title;
   #description;
   #dueDate;
   #priority;
   #isDone = false;
+  static #idCounter = 1;
   static #todoCount = 0;
   static #todoList = [];
 
   constructor(title, description, dueDate, priority) {
+    this.#id = Todo.#idCounter++;
     this.#title = title;
     this.#description = description;
     this.#dueDate = dueDate;
     this.#priority = priority;
     Todo.#todoCount++;
+  }
+
+  get id() {
+    return this.#id;
   }
 
   get title() {

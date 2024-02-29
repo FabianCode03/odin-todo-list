@@ -2,7 +2,7 @@ export function renderTodoList(todoList, container) {
   container.innerHTML = ""; //clearing container to avoid duplication
   todoList.forEach(todo => {
     container.innerHTML += `
-<div class="todo priority-${todo.priority}">
+<div class="todo priority-${todo.priority}" data-id="${todo.id}">
     <div class="leftElements">
         <input type="checkbox" name="isDone" id="isDone" />
         <h3 class="todo-title">${todo.title}</h3>

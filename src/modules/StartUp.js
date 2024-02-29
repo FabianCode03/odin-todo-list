@@ -52,33 +52,21 @@ export function addAllEventListeners() {
       // Rendering the updated todo-list
       renderTodoList(Todo.todoList, todoContainer);
 
-      // Adding EventListeners to the new Todo
-      Todo.todoList.forEach(todo => {
-        const editButton = document.querySelector(
-          `.todo[data-id="${todo.id}"] .editTodo`
-        );
-        const deleteButton = document.querySelector(
-          `.todo[data-id="${todo.id}"] .deleteTodo`
-        );
-        const detailsButton = document.querySelector(
-          `.todo[data-id="${todo.id}"] .showDetails`
-        );
-
-        editButton.addEventListener("click", () => {
-          console.log(`Bearbeiten Todo: ${todo.id}`);
-        });
-
-        deleteButton.addEventListener("click", () => {
-          console.log(`Löschen Todo: ${todo.id}`);
-        });
-
-        detailsButton.addEventListener("click", () => {
-          console.log(`Details Todo: ${todo.id}`);
-        });
-      });
-
       console.log(newTodo);
       console.log(Todo.todoList);
+    });
+
+    // Handling the buttons on the todo's via event bubbling
+    todoContainer.addEventListener("click", event => {
+      // Getting the nearest todo when container is clicked
+      const todoElement = event.target.closest(".todo");
+      const todoId = todoElement.dataset.id;
+      const todo = Todo.todoList.find(todo => todo.id == todoId);
+
+      if (event.target.closest(".deleteTodo") !== null) {
+        Todo.removeTodoFromList(todo);
+        renderTodoList(Todo.todoList, todoContainer);
+      }
     });
   });
 }

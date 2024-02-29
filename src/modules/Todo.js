@@ -90,4 +90,11 @@ export class Todo {
   static addTodoToList(todo) {
     Todo.#todoList.push(todo);
   }
+
+  static removeTodoFromList(todo) {
+    let index = Todo.#todoList.indexOf(todo);
+    if (index !== -1) {
+      Todo.#todoList.splice(index, 1);
+    }
+  }
 }

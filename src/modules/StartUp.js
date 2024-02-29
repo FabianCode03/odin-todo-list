@@ -42,10 +42,41 @@ export function addAllEventListeners() {
         newTodoForm.priority.value
       );
 
+      // Adding the Todo to the list
       Todo.addTodoToList(newTodo);
+
+      // Resetting form and closing modal
       newTodoForm.reset();
       modal.close();
+
+      // Rendering the updated todo-list
       renderTodoList(Todo.todoList, todoContainer);
+
+      // Adding EventListeners to the new Todo
+      Todo.todoList.forEach(todo => {
+        const editButton = document.querySelector(
+          `.todo[data-id="${todo.id}"] .editTodo`
+        );
+        const deleteButton = document.querySelector(
+          `.todo[data-id="${todo.id}"] .deleteTodo`
+        );
+        const detailsButton = document.querySelector(
+          `.todo[data-id="${todo.id}"] .showDetails`
+        );
+
+        editButton.addEventListener("click", () => {
+          console.log(`Bearbeiten Todo: ${todo.id}`);
+        });
+
+        deleteButton.addEventListener("click", () => {
+          console.log(`Löschen Todo: ${todo.id}`);
+        });
+
+        detailsButton.addEventListener("click", () => {
+          console.log(`Details Todo: ${todo.id}`);
+        });
+      });
+
       console.log(newTodo);
       console.log(Todo.todoList);
     });

@@ -1,4 +1,5 @@
 import { Todo } from "./Todo";
+import { renderTodoList } from "./RenderTodoList.js";
 
 export function addAllEventListeners() {
   window.addEventListener("load", function () {
@@ -12,6 +13,7 @@ export function addAllEventListeners() {
     const closeModalBtn = document.querySelector(".cancel-btn");
     const submitBtn = document.querySelector(".submit-btn");
     const newTodoForm = document.querySelector(".new-todo-form");
+    const todoContainer = this.document.querySelector("#TodoContainer");
 
     // Adding event listeners to the DOM elements
     addTodoBtn.addEventListener("click", () => modal.showModal());
@@ -31,6 +33,8 @@ export function addAllEventListeners() {
     submitBtn.addEventListener("click", e => {
       e.preventDefault();
       console.log("submitting form");
+
+      // Creation new Todo-Instance
       const newTodo = new Todo(
         newTodoForm.title.value,
         newTodoForm.description.value,
@@ -39,7 +43,9 @@ export function addAllEventListeners() {
       );
 
       Todo.addTodoToList(newTodo);
+      newTodoForm.reset();
       modal.close();
+      renderTodoList(Todo.todoList, todoContainer);
       console.log(newTodo);
       console.log(Todo.todoList);
     });

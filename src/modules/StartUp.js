@@ -89,6 +89,15 @@ export function addAllEventListeners() {
         todo.editing = true; // setting editing flag
         editTodoModal.showModal();
       }
+
+      if (event.target.closest(".isDone") !== null) {
+        const checkbox = todoElement.querySelector(".isDone");
+        if (checkbox.checked) {
+          todoElement.classList.add("checked");
+        } else {
+          todoElement.classList.remove("checked");
+        }
+      }
     });
 
     confirmChangesBtn.addEventListener("click", e => {

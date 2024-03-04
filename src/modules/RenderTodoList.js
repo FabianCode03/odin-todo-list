@@ -4,7 +4,7 @@ export function renderTodoList(todoList, container) {
     container.innerHTML += `
     <div class="todo priority-${todo.priority}" data-id="${todo.id}">
         <div class="leftElements">
-            <input type="checkbox" name="isDone" id="isDone" />
+            <input type="checkbox" name="isDone" id="isDone" class="isDone"/>
             <h3 class="todo-title">${todo.title}</h3>
         </div>
         <div class="rightElements">

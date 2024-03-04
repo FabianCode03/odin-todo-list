@@ -11,7 +11,8 @@ export function addAllEventListeners() {
     const projectsView = document.querySelector(".projects-view");
     const newTodoModal = document.querySelector(".new-todo-modal");
     const editTodoModal = document.querySelector(".edit-todo-modal");
-    const closeModalBtn = document.querySelector(".cancel-btn");
+    const cancelBtn1 = document.querySelector(".cancel-btn-1");
+    const cancelBtn2 = document.querySelector(".cancel-btn-2");
     const submitBtn = document.querySelector(".submit-btn");
     const confirmChangesBtn = document.querySelector(".confirm-changes-btn");
     const newTodoForm = document.querySelector(".new-todo-form");
@@ -20,7 +21,16 @@ export function addAllEventListeners() {
 
     // Adding event listeners to the DOM elements
     addTodoBtn.addEventListener("click", () => newTodoModal.showModal());
-    closeModalBtn.addEventListener("click", () => newTodoModal.close());
+    cancelBtn1.addEventListener("click", e => {
+      e.preventDefault();
+      newTodoModal.close();
+      console.log("closing new Todo Modal");
+    });
+    cancelBtn2.addEventListener("click", e => {
+      e.preventDefault();
+      editTodoModal.close();
+      console.log("closing edit Todo Modal");
+    });
     allTodosView.addEventListener("click", () =>
       console.log("showing all todos")
     );

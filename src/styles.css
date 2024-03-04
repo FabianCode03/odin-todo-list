@@ -202,6 +202,11 @@ main {
   font-size: large;
 }
 
+.button-row-btn:hover {
+  box-shadow: 0 0 5px 0 var(--dark-color);
+  cursor: pointer;
+}
+
 .equal-cols {
   display: flex;
 }

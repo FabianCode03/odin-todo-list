@@ -58,6 +58,10 @@ export class Todo {
     return this.#isDone;
   }
 
+  set isDone(isDone) {
+    this.#isDone = !this.#isDone;
+  }
+
   toggleIsDone() {
     this.#isDone = !this.#isDone;
   }

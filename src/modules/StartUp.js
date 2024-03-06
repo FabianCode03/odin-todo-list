@@ -93,8 +93,10 @@ export function addAllEventListeners() {
       if (event.target.closest(".isDone") !== null) {
         const checkbox = todoElement.querySelector(".isDone");
         if (checkbox.checked) {
+          todo.isDone = false;
           todoElement.classList.add("checked");
         } else {
+          todo.isDone = true;
           todoElement.classList.remove("checked");
         }
       }

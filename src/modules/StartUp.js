@@ -73,31 +73,33 @@ export function addAllEventListeners() {
     todoContainer.addEventListener("click", event => {
       // Getting the nearest todo when container is clicked
       const todoElement = event.target.closest(".todo");
-      const todoId = todoElement.dataset.id;
-      const todo = Todo.todoList.find(todo => todo.id == todoId);
+      if (todoElement) {
+        const todoId = todoElement.dataset.id;
+        const todo = Todo.todoList.find(todo => todo.id == todoId);
 
-      if (event.target.closest(".deleteTodo") !== null) {
-        Todo.removeTodoFromList(todo);
-        renderTodoList(Todo.todoList, todoContainer);
-      }
+        if (event.target.closest(".deleteTodo") !== null) {
+          Todo.removeTodoFromList(todo);
+          renderTodoList(Todo.todoList, todoContainer);
+        }
 
-      if (event.target.closest(".editTodo") !== null) {
-        editTodoForm.title.value = todo.title;
-        editTodoForm.description.value = todo.description;
-        editTodoForm.dueDate.value = todo.dueDate;
-        editTodoForm.priority.value = todo.priority;
-        todo.editing = true; // setting editing flag
-        editTodoModal.showModal();
-      }
+        if (event.target.closest(".editTodo") !== null) {
+          editTodoForm.title.value = todo.title;
+          editTodoForm.description.value = todo.description;
+          editTodoForm.dueDate.value = todo.dueDate;
+          editTodoForm.priority.value = todo.priority;
+          todo.editing = true; // setting editing flag
+          editTodoModal.showModal();
+        }
 
-      if (event.target.closest(".isDone") !== null) {
-        const checkbox = todoElement.querySelector(".isDone");
-        if (checkbox.checked) {
-          todo.isDone = false;
-          todoElement.classList.add("checked");
-        } else {
-          todo.isDone = true;
-          todoElement.classList.remove("checked");
+        if (event.target.closest(".isDone") !== null) {
+          const checkbox = todoElement.querySelector(".isDone");
+          if (checkbox.checked) {
+            todo.isDone = false;
+            todoElement.classList.add("checked");
+          } else {
+            todo.isDone = true;
+            todoElement.classList.remove("checked");
+          }
         }
       }
     });
